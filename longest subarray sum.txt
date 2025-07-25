@@ -1,0 +1,22 @@
+class Solution{
+public:
+    int longestSubarray(vector<int> &nums, int k){
+        int maxLength = 0;
+        int n = nums.size();
+
+        for (int i = 0; i < n; ++i) { // Outer loop for starting point
+            long long currentSum = 0; // Use long long to prevent overflow
+
+            for (int j = i; j < n; ++j) { // Inner loop for ending point
+                currentSum += nums[j];
+
+                if (currentSum == k) {
+                    maxLength = std::max(maxLength, j - i + 1);
+                }
+            }
+        }
+
+        return maxLength;
+        
+    }
+};
