@@ -36,3 +36,4 @@ public:
         return last_occurrence_idx - first_occurrence_idx + 1;       
     }
 };
+
