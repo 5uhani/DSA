@@ -11,6 +11,7 @@ public:
         while(index<nums.size()){
             nums[index] = 0;
             index++;
-        }   
+        }
     }
 };
+
