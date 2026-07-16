@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int min, max;
+    cin >> min >> max;
+
+    for(int i = min; i <= max; i++)
+    {
+        int original = i;
+        int reverse = 0;
+        int n = i;
+
+        while(n > 0)
+        {
+            int digit = n % 10;
+            reverse = reverse * 10 + digit;
+            n = n / 10;
+        }
+
+        if(original == reverse)
+        {
+            cout << original << " ";
+        }
+    }
+
+    return 0;
+}
