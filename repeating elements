@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    vector<int> arr(n);
+
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    for(int i = 0; i < n; i++) {
+
+        int count = 0;
+
+        // Count how many times arr[i] appears
+        for(int j = 0; j < n; j++) {
+            if(arr[i] == arr[j]) {
+                count++;
+            }
+        }
+
+        // Print only once
+        int alreadyPrinted = 0;
+        for(int k = 0; k < i; k++) {
+            if(arr[k] == arr[i]) {
+                alreadyPrinted = 1;
+                break;
+            }
+        }
+
+        if(count > 1 && alreadyPrinted == 0) {
+            cout << arr[i] << " ";
+        }
+    }
+
+    return 0;
+}
